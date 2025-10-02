@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Celda Automatizada</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene background="color: #ECECEC">
+      <!-- Cámara y luz -->
+      <a-entity camera position="0 2 5"></a-entity>
+      <a-entity light="type: directional; color: white; intensity: 1" position="2 4 5"></a-entity>
+
+      <!-- Piso -->
+      <a-plane rotation="-90 0 0" width="20" height="20" color="#7BC8A4"></a-plane>
+
+      <!-- Tu cinta transportadora -->
+      <a-entity gltf-model="./cinta.glb" position="0 0 0" scale="1 1 1"></a-entity>
+
+      <!-- Robot simple en animación cíclica -->
+      <a-box color="red" depth="0.5" height="1" width="0.5" position="1 1 0"
+             animation="property: position; to: 1 1 -1; dur: 2000; dir: alternate; loop: true">
+      </a-box>
+    </a-scene>
+  </body>
+</html>
